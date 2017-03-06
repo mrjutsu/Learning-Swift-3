@@ -52,7 +52,7 @@ todo.count
 //var a = [10,1,12,22,96,14]
 
 let a = [1,2,3]
-a.insert(4, at: 3)
+//a.insert(4, at: 3)
 
 
 
