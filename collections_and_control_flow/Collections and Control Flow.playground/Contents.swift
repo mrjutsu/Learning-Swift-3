@@ -55,6 +55,43 @@ let a = [1,2,3]
 //a.insert(4, at: 3)
 
 
+// Dictionaries
+
+/*
+    Airport code (Key)      Airport Name (Value)
+    LGA                     La Guardia
+    LHR                     Heathrow
+    BAQ                     Barranquilla
+    GRB                     Green Bay
+    CLO                     Cali
+ */
+
+// Dictionary of type string to string
+// let dictionary: [key_type: value_type] = [key: value, key: value,...]
+let airportCodes: [String: String] = [
+    "LGA": "La Guardia",
+    "LHR": "Heathrow",
+    "BAQ": "Barranquilla",
+    "GRB": "Green Bay",
+    "CLO": "Cali"
+]
+
+let currentWeather = ["temperature": 26.0]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
