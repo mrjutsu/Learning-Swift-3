@@ -68,7 +68,7 @@ let a = [1,2,3]
 
 // Dictionary of type string to string
 // let dictionary: [key_type: value_type] = [key: value, key: value,...]
-let airportCodes: [String: String] = [
+var airportCodes: [String: String] = [
     "LGA": "La Guardia",
     "LHR": "Heathrow",
     "BAQ": "Barranquilla",
@@ -78,6 +78,29 @@ let airportCodes: [String: String] = [
 
 let currentWeather = ["temperature": 26.0]
 
+// Reading from a dictionary
+
+airportCodes["baq"]
+airportCodes["BAQ"]
+
+airportCodes["CLO"]
+airportCodes["GRB"]
+
+// Inserting key value pairs
+
+airportCodes["BOG"] = "Bogota"
+airportCodes["BOG"]
+
+airportCodes["BOG"] = "Bogota El Dorado"
+airportCodes["BOG"]
+
+airportCodes.updateValue("Medellin Jose Maria Cordoba", forKey: "MDE")
+airportCodes["MDE"]
+
+// Removing key pair values
+
+airportCodes["MDE"] = nil
+airportCodes.removeValue(forKey: "BOG")
 
 
 
