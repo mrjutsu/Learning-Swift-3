@@ -103,6 +103,16 @@ airportCodes["MDE"] = nil
 airportCodes.removeValue(forKey: "BOG")
 
 
+// Dealing with non existent data
+
+let newYorkAirport = airportCodes["LGA"]
+//type(of: newYorkAirport)
+
+let chicagoAirport = airportCodes["ORD"]
+
+
+
+
 
 
 
