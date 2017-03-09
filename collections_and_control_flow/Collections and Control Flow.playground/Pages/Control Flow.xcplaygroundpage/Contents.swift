@@ -12,6 +12,19 @@ for task in todo {
 }
 
 
+// Ranges
+
+// Closed range operator
+1...5
+// Half open range operator
+1..<5
+
+for number in 1...10 {
+    print("\(number) times 5 = \(number * 5)")
+}
+
+
+
 
 
 
