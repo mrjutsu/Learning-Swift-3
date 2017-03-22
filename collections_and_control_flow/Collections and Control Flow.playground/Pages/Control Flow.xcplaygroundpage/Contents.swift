@@ -57,6 +57,55 @@ repeat {
 // while is used to repeat the statement until the condition is met
 
 
+// If statemente
+
+var temperature = 9
+
+if temperature < 18 {
+    print("It's getting chilly. I recommend wearing a light sweater.")
+} else if temperature < 12 {
+  print("It's getting cold, let's get that jacket on")
+} else {
+    print("It feels great outside! A t-shirt will do.")
+}
+
+// Logical operators
+
+if temperature > 7 && temperature < 12 {
+    print("Might want to wear a scarf with that jacket")
+}
+
+var isRaining = true
+var isSnowing = false
+
+if isRaining || isSnowing {
+    print("Get out those rain boots")
+}
+
+if !isRaining {
+    print("Yay! The sun is out!")
+}
+
+if isRaining && isSnowing && temperature < 2 {
+    print("Put some clothes on!")
+}
+
+if (isRaining || isSnowing) && temperature > 2 {
+    print("Definitely get the leather gloves out!")
+}
+
+// Code challenge
+
+var results: [Int] = []
+
+for n in 1...100 {
+    // Enter your code below
+    if !(n%2 == 0) && (n%7 == 0) {
+        results.append(n)
+    }
+    // End code
+}
+
 
 
 
