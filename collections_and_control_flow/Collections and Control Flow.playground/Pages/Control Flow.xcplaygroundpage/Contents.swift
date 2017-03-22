@@ -107,6 +107,98 @@ for n in 1...100 {
 }
 
 
+// Switch statement
+
+let airportCodes = ["LGA","LHR","CDG","HKG","DXB","LGW","JFK","ORY"]
+
+for airportCode in airportCodes {
+    switch airportCode {
+        case "LGA","JFK":
+            print("New York")
+        case "LHR","LGW":
+            print("London")
+        case "CDG","ORY":
+            print("Paris")
+        case "HKG":
+            print("Hong Kong")
+//        case "DXB":
+//            print("Dubai")
+        default:
+            print("I don't know which city that airport is in")
+    }
+}
+
+// You can put two statements in the case to make an OR comparisson
+
+
+// Code challenge
+
+var europeanCapitals: [String] = []
+var asianCapitals: [String] = []
+var otherCapitals: [String] = []
+
+let world = [
+    "BEL": "Brussels",
+    "LIE": "Vaduz",
+    "BGR": "Sofia",
+    "USA": "Washington D.C.",
+    "MEX": "Mexico City",
+    "BRA": "Brasilia",
+    "IND": "New Delhi",
+    "VNM": "Hanoi"]
+
+for (key, value) in world {
+    // Enter your code below
+    switch key {
+    case "BEL","LIE","BGR":
+        europeanCapitals.append(value)
+    case "USA","MEX","BRA":
+        otherCapitals.append(value)
+    default:
+        asianCapitals.append(value)
+    }
+    // End code
+}
+
+
+//Fixxbuxx challenge
+
+func fizzBuzz(n: Int) -> String {
+    // Enter your code between the two comment markers
+    let divisibleByThree = n%3 == 0
+    let divisibleByFive = n%5 == 0
+    
+    if divisibleByThree && divisibleByFive {
+        return "FizzBuzz"
+    } else if divisibleByThree {
+        return "Fizz"
+    } else if divisibleByFive {
+        return "Buzz"
+    } else {
+        return "\(n)"
+    }
+    
+    // End code
+    return "\(n)"
+}
+
+let months = 1...12
+
+for month in months {
+    switch month {
+    case 1:
+        print("January")
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
