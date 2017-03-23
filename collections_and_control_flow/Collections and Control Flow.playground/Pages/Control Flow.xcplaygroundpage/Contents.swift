@@ -182,14 +182,14 @@ func fizzBuzz(n: Int) -> String {
     return "\(n)"
 }
 
-let months = 1...12
-
-for month in months {
-    switch month {
-    case 1:
-        print("January")
-    }
-}
+//let months = 1...12
+//
+//for month in months {
+//    switch month {
+//    case 1:
+//        print("January")
+//    }
+//}
 
 
 
