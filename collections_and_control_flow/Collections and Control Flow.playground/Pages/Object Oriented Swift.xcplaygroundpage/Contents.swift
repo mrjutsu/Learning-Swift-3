@@ -51,6 +51,64 @@ coordinatePoint.points()
 
 let coordinatePoint2 = Point(x: 2, y: 2)
 
+
+
+class Enemy {
+    // Stored properties
+    var life: Int = 2
+    let position: Point
+    
+    init(x: Int, y: Int) {
+        self.position = Point(x: x, y: y)
+    }
+    
+    func decreaseLife(by factor: Int) -> () {
+        life -= factor
+    }
+}
+
+class Tower {
+    let position: Point
+    var range: Int = 1
+    var strength: Int = 1
+    
+    init(x: Int, y: Int) {
+        self.position = Point(x: x, y: y)
+    }
+    
+    func fire(at enemy: Enemy) -> () {
+        if isInRange(of: enemy) {
+            enemy.decreaseLife(by: strength)
+            print("Gotcha!")
+        } else {
+            print("Not in range!")
+        }
+    }
+    
+    // Helper method isInRange()
+    func isInRange(of enemy: Enemy) -> Bool {
+        let availablePositions = position.points(inRange: range)
+        
+        for point in availablePositions {
+            if point.x == enemy.position.x && point.y == enemy.position.y {
+                return true
+            }
+        }
+        
+        return false
+    }
+}
+
+let tower = Tower(x: 3, y: 3)
+let enemy = Enemy(x: 2, y: 2)
+
+tower.fire(at: enemy)
+
+
+
+
+
+
 // Code challenge
 
 //struct Book {
@@ -103,6 +161,36 @@ let coordinatePoint2 = Point(x: 2, y: 2)
 //let color = RGBColor(red: 86.0, green: 191.0, blue: 131.0, alpha: 1.0)
 //color.description
 
+// Code challenge
+
+//class Shape {
+//    var numberOfSides: Int
+//    
+//    init(numberOfSides: Int) {
+//        self.numberOfSides = numberOfSides
+//    }
+//}
+//
+//let someShape = Shape(numberOfSides: 3)
+
+
+// Code challenge
+
+//struct Location {
+//    let latitude: Double
+//    let longitude: Double
+//}
+//
+//class Business {
+//    let name: String
+//    let location: Location
+//    
+//    init(name: String, latitude: Double, longitude: Double) {
+//        self.name = name
+//        self.location = Location(latitude: latitude, longitude: longitude)
+//    }
+//}
+//let someBusiness = Business(name: "My Business", latitude: 2.0, longitude: 4.0)
 
 
 
