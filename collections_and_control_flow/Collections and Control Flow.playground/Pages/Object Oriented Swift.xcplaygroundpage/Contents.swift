@@ -52,7 +52,7 @@ coordinatePoint.points()
 let coordinatePoint2 = Point(x: 2, y: 2)
 
 
-
+// Enemies
 class Enemy {
     // Stored properties
     var life: Int = 2
@@ -67,6 +67,19 @@ class Enemy {
     }
 }
 
+class SuperEnemy: Enemy {
+    
+    let isSuper: Bool = true
+    
+    override init(x: Int, y: Int) {
+        super.init(x: x, y: y)
+        self.life = 50
+    }
+    
+}
+
+
+// Tower
 class Tower {
     let position: Point
     var range: Int = 1
@@ -99,13 +112,33 @@ class Tower {
     }
 }
 
+class LaserTower: Tower {
+    
+    override init(x: Int, y: Int) {
+        super.init(x: x, y: y)
+        self.range = 100
+        self.strength = 100
+    }
+    
+    override func fire(at enemy: Enemy) {
+        while enemy.life >= 0 {
+            enemy.decreaseLife(by: strength)
+        }
+        
+        print("Enemy destroyed!")
+    }
+    
+}
+
 let tower = Tower(x: 3, y: 3)
 let enemy = Enemy(x: 2, y: 2)
+let superEnemy = SuperEnemy(x: 3, y: 3)
+let laserTower = LaserTower(x: 5, y: 5)
+superEnemy.life
 
 tower.fire(at: enemy)
-
-
-
+tower.fire(at: superEnemy)
+laserTower.fire(at: superEnemy)
 
 
 
@@ -192,7 +225,57 @@ tower.fire(at: enemy)
 //}
 //let someBusiness = Business(name: "My Business", latitude: 2.0, longitude: 4.0)
 
+// Code challenge
 
+//class Vehicle {
+//    var numberOfDoors: Int
+//    var numberOfWheels: Int
+//    
+//    init(withDoors doors: Int, andWheels wheels: Int) {
+//        self.numberOfDoors = doors
+//        self.numberOfWheels = wheels
+//    }
+//}
+//
+//class Car: Vehicle {
+//    let numberOfSeats: Int = 4
+//    
+//    override init(withDoors doors: Int, andWheels wheels: Int) {
+//        super.init(withDoors: doors, andWheels: wheels)
+//    }
+//}
+//
+//let someCar = Car(withDoors: 4, andWheels: 4)
+
+// Code challenge
+
+//class Person {
+//    let firstName: String
+//    let lastName: String
+//    
+//    init(firstName: String, lastName: String) {
+//        self.firstName = firstName
+//        self.lastName = lastName
+//    }
+//    
+//    func fullName() -> String {
+//        return "\(firstName) \(lastName)"
+//    }
+//}
+//
+//class Doctor: Person {
+//    
+//    override init(firstName: String, lastName: String) {
+//        super.init(firstName: firstName, lastName: lastName)
+//    }
+//    
+//    override func fullName() -> String {
+//        return "Dr. \(self.lastName)"
+//    }
+//    
+//}
+//let someDoctor = Doctor(firstName: "David", lastName: "Rosillo")
+//someDoctor.fullName()
 
 
 
